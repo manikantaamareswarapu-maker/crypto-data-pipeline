@@ -1,0 +1,34 @@
+name: CI
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+
+jobs:
+  lint-and-validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install lint tools
+        run: pip install ruff
+
+      - name: Lint Python
+        run: ruff check lambdas databricks
+
+      - name: Setup Terraform
+        uses: hashicorp/setup-terraform@v3
+
+      - name: Terraform fmt check
+        run: terraform -chdir=infra fmt -check -recursive
+
+      - name: Terraform validate
+        run: |
+          terraform -chdir=infra init -backend=false
+          terraform -chdir=infra validate
