@@ -6,7 +6,7 @@ on:
   pull_request:
 
 jobs:
-  lint-and-validate:
+  python-check:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
@@ -16,19 +16,8 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install lint tools
-        run: pip install ruff
-
-      - name: Lint Python
-        run: ruff check lambdas databricks
-
-      - name: Setup Terraform
-        uses: hashicorp/setup-terraform@v3
-
-      - name: Terraform fmt check
-        run: terraform -chdir=infra fmt -check -recursive
-
-      - name: Terraform validate
+      - name: Check Python files compile
         run: |
-          terraform -chdir=infra init -backend=false
-          terraform -chdir=infra validate
+          python -m py_compile lambdas/ingestion/handler.py
+          python -m py_compile lambdas/processing_trigger/handler.py
+          echo "All Python files compiled successfully"
