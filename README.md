@@ -91,17 +91,17 @@ terraform apply \
 ---
 
 ## 📅 Build-in-public series
+- [x] **Day 1** — Architecture + repo scaffold
+- [x] **Day 2** — Ingestion Lambda + schema validation
+- [x] **Day 3** — EventBridge schedule (automatic runs)
+- [x] **Day 4** — Event-driven trigger (RawPricesLanded)
+- [ ] Day 5 — Processing Lambda + Databricks Spark job
+- [ ] Day 6 — PySpark staging transform
+- [ ] Day 7 — Delta Lake write + star schema
+- [ ] Day 8 — CloudWatch metrics + dashboard
+- [ ] Day 9 — GitHub Actions CI
+- [ ] Day 10 — Retrospective
 
-1. Architecture + repo scaffold
-2. Ingestion Lambda (CoinGecko → S3)
-3. Terraform: S3 + IAM
-4. EventBridge schedule wiring
-5. Event-driven trigger (RawPricesLanded)
-6. Processing Trigger Lambda + Databricks Jobs API
-7. PySpark staging transform
-8. Delta Lake write + star schema
-9. CloudWatch metrics + dashboard
-10. GitHub Actions CI + retrospective
 
 ---
 
