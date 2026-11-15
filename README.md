@@ -95,7 +95,7 @@ terraform apply \
 - [x] **Day 2** — Ingestion Lambda + schema validation
 - [x] **Day 3** — EventBridge schedule (automatic runs)
 - [x] **Day 4** — Event-driven trigger (RawPricesLanded)
-- [ ] Day 5 — Processing Lambda + Databricks Spark job
+- [x] Day 5 — Processing Lambda + Databricks Spark job
 - [ ] Day 6 — PySpark staging transform
 - [ ] Day 7 — Delta Lake write + star schema
 - [ ] Day 8 — CloudWatch metrics + dashboard
