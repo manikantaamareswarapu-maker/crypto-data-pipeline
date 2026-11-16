@@ -5,7 +5,8 @@ crypto prices are ingested by a Lambda, landed in S3 as Parquet, and processed
 by a Databricks Spark job into a **Delta Lake** star schema — with EventBridge
 driving the flow and CloudWatch watching it.
 
-   ![Architecture](docs/architecture.gif)
+   ![Architecture](<img width="1280" height="1040" alt="crypto_pipeline_animated (1)" src="https://github.com/user-attachments/assets/c423b942-f7a0-4d13-b1a0-352885c75d17" />
+)
 
 > **Why this project?** It demonstrates the exact skills modern cloud data teams
 > hire for: serverless ingestion, event-driven orchestration, a data lakehouse,
